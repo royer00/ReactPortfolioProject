@@ -1,18 +1,7 @@
-import React from 'react';
-
-
-
-
+import React from "react";
 
 const Programming = () => {
-    
-    return (
-        <>
-        </>
-    )
-}
-
-
-
+  return <>Programming</>;
+};
 
 export default Programming;

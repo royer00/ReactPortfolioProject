@@ -1,7 +1,29 @@
 import "./styles.css";
 import React from "react";
+import { useState } from "react";
+import Education from "./Education";
+import Work from "./Work";
+import Programming from "./Programming";
+import Projects from "./Projects";
 
 export default function App() {
+  const [education, setEducation] = useState(true);
+  const [work, setWork] = useState(false);
+  const [programming, setProgramming] = useState(false);
+  const [projects, setProjects] = useState(false);
+
+  const setAllFalse = () => {
+    setEducation(false);
+    setWork(false);
+    setProgramming(false);
+    setProjects(false);
+  };
+
+  const changeState = (function1, state1) => {
+    setAllFalse();
+    function1(state1);
+  };
+
   return (
     <div className="App">
       <div className="herosection px-10 py-5">
@@ -86,11 +108,11 @@ export default function App() {
       <div className="resume-outer-section d-flex flex-column">
         <span className="about-me-text">Resume</span>
         <span className="why-text">Professional Bio and Details</span>
-        <div className="resume-new-section row">
-          <div
-            className="col-lg-4 col-md-4 resume-left-section d-flex flex-row"
-            style={{ width: "70%", marginInline: "auto" }}
-          >
+        <div
+          className="resume-new-section row"
+          style={{ width: "70%", marginInline: "auto" }}
+        >
+          <div className="col-lg-4 col-md-4 resume-left-section d-flex px-0 shadow flex-row">
             <div className="d-flex flex-column bg-new text-dark">
               <span className="icons-span">
                 <i className="fas fa-user-graduate"></i>
@@ -106,13 +128,46 @@ export default function App() {
               </span>
             </div>
             <div className="d-flex flex-column">
-              <span className="resume-options-items">Education</span>
-              <span className="resume-options-items">Work</span>
-              <span className="resume-options-items">Programming</span>
-              <span className="resume-options-items">Projects</span>
+              <span
+                className="resume-options-items"
+                onClick={() => {
+                  changeState(setEducation, true);
+                }}
+              >
+                Education
+              </span>
+              <span
+                className="resume-options-items"
+                onClick={() => {
+                  changeState(setWork, true);
+                }}
+              >
+                Work
+              </span>
+              <span
+                className="resume-options-items"
+                onClick={() => {
+                  changeState(setProgramming, true);
+                }}
+              >
+                Programming
+              </span>
+              <span
+                className="resume-options-items"
+                onClick={() => {
+                  changeState(setProjects, true);
+                }}
+              >
+                Projects
+              </span>
             </div>
           </div>
-          <div className="col-lg-8 col-md-8 resume-right-section"></div>
+          <div className="col-lg-8 col-md-8 resume-right-section">
+            {education === true && <Education />}
+            {work === true && <Work />}
+            {programming === true && <Programming />}
+            {projects === true && <Projects />}
+          </div>
         </div>
       </div>
     </div>

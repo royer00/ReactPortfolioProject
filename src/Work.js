@@ -1,7 +1,7 @@
 import React from "react";
 
 const Work = () => {
-  return <></>;
+  return <>Work</>;
 };
 
 export default Work;

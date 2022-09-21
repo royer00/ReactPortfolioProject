@@ -1,7 +1,7 @@
 import React from "react";
 
 const Projects = () => {
-  return <></>;
+  return <>Projects</>;
 };
 
 export default Projects;
