@@ -113,7 +113,7 @@ export default function App() {
           style={{ width: "70%", marginInline: "auto" }}
         >
           <div className="col-lg-4 col-md-4 resume-left-section d-flex px-0 shadow flex-row">
-            <div className="d-flex flex-column bg-new text-dark">
+            <div className="d-flex flex-column bg-new text-white">
               <span className="icons-span">
                 <i className="fas fa-user-graduate"></i>
               </span>
@@ -129,7 +129,11 @@ export default function App() {
             </div>
             <div className="d-flex flex-column">
               <span
-                className="resume-options-items"
+                className={
+                  !education
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
                 onClick={() => {
                   changeState(setEducation, true);
                 }}
@@ -137,7 +141,11 @@ export default function App() {
                 Education
               </span>
               <span
-                className="resume-options-items"
+                className={
+                  !work
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
                 onClick={() => {
                   changeState(setWork, true);
                 }}
@@ -145,7 +153,11 @@ export default function App() {
                 Work
               </span>
               <span
-                className="resume-options-items"
+                className={
+                  !programming
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
                 onClick={() => {
                   changeState(setProgramming, true);
                 }}
@@ -153,7 +165,11 @@ export default function App() {
                 Programming
               </span>
               <span
-                className="resume-options-items"
+                className={
+                  !projects
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
                 onClick={() => {
                   changeState(setProjects, true);
                 }}
