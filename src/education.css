@@ -11,7 +11,7 @@
   color: #1c1c1c;
   text-transform: uppercase;
 }
-.year-passedout {
+.year-passed {
   font-family: monospace;
   font-size: 1rem;
   background: var(--standout-color);
